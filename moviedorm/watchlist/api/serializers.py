@@ -8,7 +8,7 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         exclude = ('watchlist',)
-        # fields = "__all__"
+        #fields = "__all__"
 
 
 class WatchListSerializer(serializers.ModelSerializer):
@@ -18,7 +18,10 @@ class WatchListSerializer(serializers.ModelSerializer):
     class Meta:
         model = WatchList
         fields = "__all__"
+    
+    
 
+    
 
 class StreamPlatformSerializer(serializers.ModelSerializer):
     watchlist = WatchListSerializer(many=True, read_only=True)
